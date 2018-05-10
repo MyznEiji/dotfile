@@ -7,7 +7,7 @@ fi
 # rubyの設定
   eval "$(rbenv init -)"
 
-# PHPの設定　
+# PHPの設定
   [[ -e ~/.phpbrew/bashrc ]] && source ~/.phpbrew/bashrc
   export PATH="$PATH:~/.composer/vendor/bin"
 
@@ -62,4 +62,7 @@ fi
 
 # bzip2 settings
     export PATH="/usr/local/opt/bzip2/bin:$PATH"
+
+# NeoVim
+    export XDG_CONFIG_HOME="$HOME/.config"
 

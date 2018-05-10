@@ -29,7 +29,7 @@ alias techmaster='open https://master.tech-camp.in/'
 alias techcamp='python3 /Users/miyazonoeiji/projects/python/jobcan/jobcan.py'
 
 # neovimのエイリアス
-alias vi='nvim'
+# alias vi='nvim'
 
 
 #ls -Gのcolor設定
