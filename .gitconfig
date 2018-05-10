@@ -1,0 +1,24 @@
+[core]
+	excludesfile = /Users/miyazonoeiji/.gitignore_global
+	editor = atom --wait
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = MyznEiji
+	email = em711th@icloud.com
+[commit]
+	template = /Users/miyazonoeiji/.stCommitMsg
+[alias]
+	ci = commit
+	st = status
+	br = branch
+  co = checkout
+  l = log --oneline --decorate --graph
+[merge]
+	ff = false
+[pull]
+	rebase = true
