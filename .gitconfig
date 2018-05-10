@@ -16,8 +16,8 @@
 	ci = commit
 	st = status
 	br = branch
-  co = checkout
-  l = log --oneline --decorate --graph
+  	co = checkout
+  	l = log --oneline --decorate --graph
 [merge]
 	ff = false
 [pull]
