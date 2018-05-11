@@ -1,10 +1,20 @@
 # エイリアスの設定
-alias ls='ls -FG'
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
 alias typora="open -a typora"
 alias less='less -X'
+# lsの結果を見やすくする
+alias ls="ls -GAF"
+
+# cdと同時にlsする
+function cdls() {
+  # cdがaliasでループするので\をつける
+  \cd $1;
+  ls;
+}
+alias cd=cdls
+
 
 # bash系のエイリアス
 alias bp='vi ~/dotfiles/.bash_profile'
