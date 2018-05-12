@@ -6,3 +6,6 @@
  do
      ln -s $HOME/dotfiles/$file $HOME/$file
  done
+
+
+ln -s $HOME/dotfiles/init.vim $HOME/.config/nvim/init.vim
