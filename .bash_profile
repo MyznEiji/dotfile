@@ -42,7 +42,7 @@ fi
     source /usr/local/etc/bash_completion.d/git-prompt.sh
     source /usr/local/etc/bash_completion.d/git-completion.bash
     GIT_PS1_SHOWDIRTYSTATE=true
-    export PS1='\n\n■  \[\e[0;31m\]\u\[\e[0;0m\] \[\e[0;35m\]\w\[\e[0;0m\] \t \[\033[00m\]\[\033[31m\]$(__git_ps1 %s)\[\033[00m\]\n\[\e[0;36m\]\$\[\e[0;0m\] '
+    export PS1="\n\n■  \[\e[0;31m\]\u\[\e[0;0m\] \[\e[0;35m\]\w\[\e[0;0m\] \t \[\033[00m\]\[\033[31m\]$(__git_ps1 %s)\[\033[00m\]\n\[\e[0;36m\]\$\[\e[0;0m\] "
 
 # TwitterAPI
     export CONSUMER_KEY=HB0BwlhXsLdhGdkpEw2fluFp1

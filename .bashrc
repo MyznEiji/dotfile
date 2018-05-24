@@ -31,8 +31,11 @@ alias checkWeb='python3 /Users/miyazonoeiji/projects/python/everdayTask/startWeb
 alias checkBlog='python3 /Users/miyazonoeiji/projects/python/everdayTask/startBlog.py'
 alias checkYoutube='python3 /Users/miyazonoeiji/projects/python/everdayTask/startYouTube.py'
 
-
+# githubのエイリアス
 alias github='open https://github.com/'
+
+# Udemyのエイリアス
+alias udemy='open https://www.udemy.com/home/my-courses/learning/'
 
 # TechCamp系のエイリアス
 alias techmaster='open https://master.tech-camp.in/'
@@ -103,6 +106,4 @@ alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 PATH="$PATH:~/bin"
 
 # sourceコマンドでのサーチパス検索をやめさせる
-shopt -u sourcepath
-
-
+# shopt -u sourcepath
