@@ -98,8 +98,6 @@ path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'
 # pyenv をインストールしてると brew doctor で出る Warning を消す方法
 alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 
-# phpenv入れてる時brew doctorしたら出るWarning消した
-# alias brew="env PATH=${PATH/\/Users\/miyazonoeiji\/\.phpbrew\/php\/php-5.6.23\/bin:/} brew"
 
 # サーチパスに~/binを追加
 PATH="$PATH:~/bin"

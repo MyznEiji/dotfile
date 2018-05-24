@@ -113,9 +113,3 @@ nnoremap <C-]> g<C-]>
 " highlight PmenuSel ctermfg=white ctermbg=gray
 "----------------------------------------------------------
 
-"----------------------------------------------------------
-" python
-"----------------------------------------------------------
-let g:python_host_prog = "/Users/daikirokuyama/.pyenv/versions/2.7.14/envs/neovim2/bin/python"
-let g:python3_host_prog = "/Users/daikirokuyama/.pyenv/versions/3.6.4/envs/neovim3/bin/python"
-"----------------------------------------------------------

@@ -13,13 +13,6 @@ fi
 
 # pythonの設定
 
-  # pyenv
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init -)"
-
-  # pipのパスを通す(https://qiita.com/quvo/items/1f4075203854ced19ec5)
-  export PYTHONPATH=$PYTHONPATH:/Library/Python/2.7/site-packages/
 
 # C#(mono)の環境設定 "mcs" path
   export PATH=$PATH:/Applications/Unity/Unity2017.2.0f3.app/Contents/MonoBleedingEdge/bin/
@@ -49,8 +42,9 @@ fi
     source /usr/local/etc/bash_completion.d/git-prompt.sh
     source /usr/local/etc/bash_completion.d/git-completion.bash
     GIT_PS1_SHOWDIRTYSTATE=true
-    export PS1='\n\n ■  \[\e[0;31m\]\u\[\e[0;0m\] \[\e[0;35m\]\w\[\e[0;0m\] \t \[\033[00m\]\[\033[31m\]$(__git_ps1 %s)\[\033[00m\]\n\[\e[0;36m\]\$\[\e[0;0m\] '
+    # export PS1='\n\n ■  \[\e[0;31m\]\u\[\e[0;0m\] \[\e[0;35m\]\w\[\e[0;0m\] \t \[\033[00m\]\[\033[31m\]$(__git_ps1 %s)\[\033[00m\]\n\[\e[0;36m\]\$\[\e[0;0m\] '
 
+    export PS1='\n\n\w \[\e[0;36m\]\$\[\e[0;0m\] \[\033[00m\]\[\033[31m\]$(__git_ps1 %s)\[\033[00m\] '
 # TwitterAPI
     export CONSUMER_KEY=HB0BwlhXsLdhGdkpEw2fluFp1
     export CONSUMER_SECRET=kqSnGgrUdcDf0VWgale5whqydz0Ma9Vels8a4LiEOzZ3N8SDAU
@@ -66,4 +60,3 @@ fi
 # NeoVim
     export XDG_CONFIG_HOME="$HOME/.config"
 
-export PATH="/usr/local/sbin:$PATH"
