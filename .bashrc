@@ -42,7 +42,10 @@ alias techmaster='open https://master.tech-camp.in/'
 alias techcamp='python3 /Users/miyazonoeiji/projects/python/jobcan/jobcan.py'
 
 # neovimのエイリアス
- alias vi='nvim'
+alias vi='nvim'
+
+# KeyboardCleabTool起動
+alias keystop='open -a /Applications/KeyboardCleanTool.app/'
 
 
 #ls -Gのcolor設定
