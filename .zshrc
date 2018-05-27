@@ -2,11 +2,11 @@
 source ~/.bash_profile
 
 #補完機能を使用する
-autoload -U compinit
-compinit
-zstyle ':completion::complete:*' use-cache true
+#autoload -U compinit
+#compinit
+#zstyle ':completion::complete:*' use-cache true
 #zstyle ':completion:*:default' menu select true
-zstyle ':completion:*:default' menu select=1
+#zstyle ':completion:*:default' menu select=1
 
 #大文字、小文字を区別せず補完する
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -251,11 +251,11 @@ bindkey '^^' cdup
 #stty susp '^Z'
 
 # 補完候補のメニュー選択で、矢印キーの代わりにhjklで移動出来るようにする。
-# zmodload zsh/complist
-# bindkey -M menuselect 'h' vi-backward-char
-# bindkey -M menuselect 'j' vi-down-line-or-history
-# bindkey -M menuselect 'k' vi-up-line-or-history
-# bindkey -M menuselect 'l' vi-forward-char
+ zmodload zsh/complist
+ bindkey -M menuselect 'h' vi-backward-char
+ bindkey -M menuselect 'j' vi-down-line-or-history
+ bindkey -M menuselect 'k' vi-up-line-or-history
+ bindkey -M menuselect 'l' vi-forward-char
 
 #zsh Git
 autoload -Uz vcs_info
@@ -345,28 +345,10 @@ TRAPALRM() {
 
 
 
-#vi ライクな操作ができる
-bindkey -v
-# End of lines configured by zsh-newuser-install
-# The following lines were added by compinstall
 
-autoload -Uz compinit
-compinit
-
-#
-# setopt
-#
-
-
-# End of lines added by compinstall
-
-
-
-
-
-autoload -U compinit
-compinit
-zstyle ':completion:*:default' menu select=2
+#autoload -U compinit
+#compinit
+#zstyle ':completion:*:default' menu select=2
 
 # 補完関数の表示を強化する
 zstyle ':completion:*' verbose yes
@@ -461,3 +443,83 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # オブジェクトファイルとか中間ファイルとかはfileとして補完させない
 zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
+
+
+
+
+#------------------  fzfの設定  ---------------------------------
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --files --hidden --glob "!.git"'
+export FZF_DEFAULT_OPTS='--height 40% --reverse --border'
+
+
+# fbr - checkout git branch
+fbr() {
+  local branches branch
+  branches=$(git branch -vv) &&
+  branch=$(echo "$branches" | fzf +m) &&
+  git checkout $(echo "$branch" | awk '{print $1}' | sed "s/.* //")
+}
+
+
+#fbrm - checkout git branch (including remote branches)
+fbrm() {
+  local branches branch
+  branches=$(git branch --all | grep -v HEAD) &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+
+# fshow - git commit browser
+fshow() {
+  git log --graph --color=always \
+      --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
+  fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \
+      --bind "ctrl-m:execute:
+                (grep -o '[a-f0-9]\{7\}' | head -1 |
+                xargs -I % sh -c 'git show --color=always % | less -R') << 'FZF-EOF'
+                {}
+FZF-EOF"
+}
+
+
+# fd - cd to selected directory
+fd() {
+  local dir
+  dir=$(find ${1:-.} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+
+
+
+# worktree移動
+function cdworktree() {
+    # カレントディレクトリがGitリポジトリ上かどうか
+    git rev-parse &>/dev/null
+    if [ $? -ne 0 ]; then
+        echo fatal: Not a git repository.
+        return
+    fi
+
+    local selectedWorkTreeDir=`git worktree list | fzf | awk '{print $1}'`
+
+    if [ "$selectedWorkTreeDir" = "" ]; then
+        # Ctrl-C.
+        return
+    fi
+
+    cd ${selectedWorkTreeDir}
+  }
+
+
+  " [Replace of ctrlp.vim] ========================================" 
+nnoremap <C-p> :FZFFileList<CR>
+command! FZFFileList call fzf#run({
+            \ 'source': 'find . -type d -name .git -prune -o ! -name .DS_Store',
+            \ 'sink': 'e'})
+
+
+
