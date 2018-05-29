@@ -48,6 +48,11 @@ alias vi='nvim'
 alias keystop='open -a /Applications/KeyboardCleanTool.app/'
 
 
+# HowToをopen
+alias howto='typora ~/projects/markDown/howToUse'
+
+
+
 #ls -Gのcolor設定
   # 設定できる属性とデフォルト色
     # 順番	属性	デフォルト色(文字色 x 背景色)	設定
