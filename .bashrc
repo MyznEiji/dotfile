@@ -92,9 +92,6 @@ alias howto='typora ~/projects/markDown/howToUse'
   #export LSCOLORS=exfxcxdxbxegedabagacad デフォルト
    export LSCOLORS=gxfxcxdxbxegedabagacad
 
-#Lessコマンド後quitでファイルが消さない
-# export LESS="--no-init"
-# export LESSCHARSET=utf-8
 
 
 #コマンド履歴
@@ -105,9 +102,6 @@ HISTFILESIZE=1000000
 path_append ()  { path_remove $1; export PATH="$PATH:$1"; }
 path_prepend () { path_remove $1; export PATH="$1:$PATH"; }
 path_remove ()  { export PATH=`echo -n $PATH | awk -v RS=: -v ORS=: '$0 != "'$1'"' | sed 's/:$//'`; }
-
-# pyenv をインストールしてると brew doctor で出る Warning を消す方法
-alias brew="PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin brew"
 
 
 # サーチパスに~/binを追加

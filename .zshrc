@@ -2,11 +2,11 @@
 source ~/.bash_profile
 
 #補完機能を使用する
-#autoload -U compinit
-#compinit
-#zstyle ':completion::complete:*' use-cache true
-#zstyle ':completion:*:default' menu select true
-#zstyle ':completion:*:default' menu select=1
+# autoload -U compinit
+# compinit -u 
+# zstyle ':completion::complete:*' use-cache true
+# zstyle ':completion:*:default' menu select true
+# zstyle ':completion:*:default' menu select=1
 
 #大文字、小文字を区別せず補完する
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
@@ -34,12 +34,12 @@ alias mmv='noglob zmv -W'
 #zmv -W -n 'server.*' 'server.lcoal.*'
 
 #予測入力させる
-autoload predict-on
-zle -N predict-on
-zle -N predict-off
-bindkey '^X^P' predict-on
-bindkey '^O' predict-off
-zstyle ':predict' verbose true
+ autoload predict-on
+ zle -N predict-on
+ zle -N predict-off
+ bindkey '^X^P' predict-on
+ bindkey '^O' predict-off
+ zstyle ':predict' verbose true
 
 #入力途中の履歴補完
 bindkey "^P" history-beginning-search-backward-end
@@ -244,11 +244,11 @@ bindkey '^^' cdup
 
 #端末設定
 #Ctrl+H に 1 文字削除
-#stty erase '^H'
+stty erase '^H'
 #Ctrl+C に割り込み
-#stty intr '^C'
+stty intr '^C'
 # Ctrl+Z にサスペンド
-#stty susp '^Z'
+stty susp '^Z'
 
 # 補完候補のメニュー選択で、矢印キーの代わりにhjklで移動出来るようにする。
  zmodload zsh/complist
@@ -408,7 +408,8 @@ setopt print_eight_bit  #日本語ファイル名等8ビットを通す
 setopt extended_glob  # 拡張グロブで補完(~とか^とか。例えばless *.txt~memo.txt ならmemo.txt 以外の *.txt にマッチ)
 setopt globdots # 明確なドットの指定なしで.から始まるファイルをマッチ
 
-bindkey "^I" menu-complete   # 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
+# これがあると補完がやりづらい
+# bindkey "^I" menu-complete   # 展開する前に補完候補を出させる(Ctrl-iで補完するようにする)
 
 # 色の定義
 local DEFAULT=$'%{^[[m%}'$
@@ -443,6 +444,20 @@ zstyle ':completion:*:cd:*' ignore-parents parent pwd
 
 # オブジェクトファイルとか中間ファイルとかはfileとして補完させない
 zstyle ':completion:*:*files' ignored-patterns '*?.o' '*?~' '*\#'
+
+
+
+fpath=($(brew --prefix)/share/zsh/site-functions $fpath)
+
+autoload -U compinit
+compinit -u
+
+
+
+
+
+
+
 
 
 

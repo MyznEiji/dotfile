@@ -1,9 +1,6 @@
 #!/bin/bash
 
-# Load vital library that is most important and
-# constructed with many minimal functions
-# For more information, see etc/README.md
-# . "$DOTPATH"/etc/lib/vital.sh
+has() { type "$1" &>/dev/null; }
 
 # If the current_bat is less than the BATTERY_DANGER,
 # output color will be red
@@ -74,7 +71,7 @@ battery_color_tmux() {
     else
         # percentage > BATTERY_DANGER
         if [ "${percentage%%%*}" -ge "$BATTERY_DANGER" ]; then
-            echo -e "${percentage}"
+            echo -e "#[fg=blue]${percentage}#[default]"
         else
             echo -e "#[fg=red]${percentage}#[default]"
         fi
@@ -104,15 +101,6 @@ get_remain() {
     if [ "$time_remain" = "no estimate" ]; then
         return 1
     fi
-}
-
-has() {
-    is_exists "$@"
-}
-
-is_exists() {
-    which "$1" >/dev/null 2>&1
-    return $?
 }
 
 # this scripts is supported OS X only now
@@ -150,3 +138,20 @@ do
 done
 
 get_battery
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
