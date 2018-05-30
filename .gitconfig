@@ -1,6 +1,6 @@
 [core]
 	excludesfile = /Users/miyazonoeiji/.gitignore_global
-	editor = atom --wait
+	editor = vim -c \"set fenc=utf-8\"
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -11,7 +11,7 @@
 	name = MyznEiji
 	email = em711th@icloud.com
 [commit]
-	template = /Users/miyazonoeiji/.stCommitMsg
+#  template = 
 [alias]
 	ci = commit
 	st = status
