@@ -22,7 +22,7 @@ bind generic W :!git reflog
 bind generic y @sh -c "echo %(commit) | pbcopy"
 
 # push
-bind main U ?git poh "%(prompt Enter push branch => )" # poh = push origin HEAD:$1
+bind main U ?git push "%(prompt Enter push branch => )" # poh = push origin HEAD:$1
 
 # rebase
 bind main <Ctrl-r> ?git rebase -i %(commit)
