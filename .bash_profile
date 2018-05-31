@@ -59,3 +59,5 @@ fi
 # NeoVim
     export XDG_CONFIG_HOME="$HOME/.config"
 
+# diff-highlightにPATHを通す
+    export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
