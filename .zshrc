@@ -534,6 +534,16 @@ fadd() {
 
 
 
+if [[ -z "$TMUX" ]]
+then
+  tmux new-session;
+  exit;
+fi
+
+# プラグインのロード処理
+
+
+
 
 
 
