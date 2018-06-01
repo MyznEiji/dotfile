@@ -536,8 +536,8 @@ fadd() {
 
 if [[ -z "$TMUX" ]]
 then
-  tmux new-session;
-  exit;
+  tmux_custom 
+  # exit;
 fi
 
 # プラグインのロード処理
@@ -578,7 +578,7 @@ function tmux_automatically_attach_session()
             fi
 
             if tmux has-session >/dev/null 2>&1 && tmux list-sessions | grep -qE '.*]$'; then
-                # detached session exists
+# detached session exists
                 tmux list-sessions
                 echo -n "Tmux: attach? (y/N/num) "
                 read
@@ -598,8 +598,8 @@ function tmux_automatically_attach_session()
             fi
 
             if is_osx && is_exists 'reattach-to-user-namespace'; then
-                # on OS X force tmux's default command
-                # to spawn a shell in the user's namespace
+# on OS X force tmux's default command
+# to spawn a shell in the user's namespace
                 tmux_config=$(cat $HOME/.tmux.conf <(echo 'set-option -g default-command "reattach-to-user-namespace -l $SHELL"'))
                 tmux -f <(echo "$tmux_config") new-session && echo "$(tmux -V) created new session supported OS X"
             else
@@ -608,4 +608,6 @@ function tmux_automatically_attach_session()
         fi
     fi
 }
-tmux_automatically_attach_session
+ tmux_automatically_attach_session
+
+

@@ -52,6 +52,14 @@ alias keystop='open -a /Applications/KeyboardCleanTool.app/'
 alias howto='typora ~/projects/markDown/howToUse'
 
 
+# シェル切り替え
+alias csb='chsh -s /bin/bash'
+alias csz='chsh -s /bin/zsh'
+
+
+# tmux起動
+alias tmux_custom='tmux new-session \; source-file ~/.tmux/session'
+
 
 #ls -Gのcolor設定
   # 設定できる属性とデフォルト色
