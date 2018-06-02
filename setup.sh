@@ -9,3 +9,6 @@
 
 
 ln -s $HOME/dotfiles/init.vim $HOME/.config/nvim/init.vim
+ln -s $HOME/dotfiles/tdein_lazy.toml $HOME/.config/nvim/toml/dein_lazy.toml
+ln -s $HOME/dotfiles/dein.toml $HOME/.config/nvim/toml/dein.toml
+ln -s $HOME/dotfiles/dein_python.toml $HOME/.config/nvim/toml/dein_python.toml
