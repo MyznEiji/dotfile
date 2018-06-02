@@ -16,7 +16,7 @@ let s:nvim_home = s:config_home . '/nvim'
 let s:dein_dir = s:nvim_home . '/dein'
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
-" when you hava dein.vim, install it from github
+" when you don't hava dein.vim, install it from github
 if !isdirectory(s:dein_repo_dir)
     call system('git clone https://github.com/Shougo/dein.vim ' . shellescape(s:dein_repo_dir))
 endif
@@ -26,6 +26,7 @@ let &runtimepath = s:dein_repo_dir . "," . &runtimepath
 let s:toml_dir = s:nvim_home . '/toml'
 let s:toml_file = s:toml_dir . '/dein.toml'
 let s:lazy_toml = s:toml_dir . '/dein_lazy.toml'
+let s:python_toml = s:toml_dir . '/dein_python.toml'
 
 " start setting
 if dein#load_state(s:dein_dir)
@@ -34,6 +35,7 @@ if dein#load_state(s:dein_dir)
   " TOMLを読み込み、キャッシュしておく
   call dein#load_toml(s:toml_file, {'lazy': 0})
   call dein#load_toml(s:lazy_toml, {'lazy': 1})
+  call dein#load_toml(s:python_toml, {'lazy': 1})
 
   " end setting
   call dein#end()
