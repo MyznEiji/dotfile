@@ -93,3 +93,11 @@ nnoremap <C-l> <C-w>l
 " ?{pattern}の入力中は「?」をタイプすると自動で「\?」が 入力されるようになる
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+
+
+
+let g:python3_host_prog = expand('/usr/local/bin/python3')
+
+
+
+
