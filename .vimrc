@@ -74,7 +74,6 @@ set showcmd
 set ambiwidth=double
 
 
-
 " 操作・入力系
 " インサートモードでbackspaceを有効に
 set backspace=indent,eol,start

@@ -20,11 +20,13 @@ let &runtimepath = s:dein_repo_dir .",". &runtimepath
 let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 let s:python_file = fnamemodify(expand('<sfile>'), ':h').'/python.toml'
 let s:lazy_file = fnamemodify(expand('<sfile>'), ':h').'/lazy.toml'
+let s:php_file = fnamemodify(expand('<sfile>'), ':h').'/php.toml'
 if dein#load_state(s:dein_dir)
   call dein#begin(s:dein_dir)
-  call dein#load_toml(s:toml_file)
-  call dein#load_toml(s:python_file)
-  call dein#load_toml(s:lazy_file)
+  call dein#load_toml(s:toml_file, {'lazy': 0})
+  call dein#load_toml(s:python_file, {'lazy': 1})
+  call dein#load_toml(s:lazy_file, {'lazy': 1})
+  call dein#load_toml(s:php_file, {'lazy': 1})
   call dein#end()
   call dein#save_state()
 endif
