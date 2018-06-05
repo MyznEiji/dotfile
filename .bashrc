@@ -16,11 +16,15 @@ function cdls() {
 alias cd=cdls
 
 
-# bash系のエイリアス
+# shell系のエイリアス
 alias bp='vi ~/dotfiles/.bash_profile'
 alias br='vi ~/dotfiles/.bashrc'
+alias zr='vi ~/dotfiles/.zshrc'
+alias zr='vi ~/dotfiles/.zprofile'
 alias sbp='source ~/dotfiles/.bash_profile'
+alias szp='source ~/dotfiles/.zprofile'
 alias sbr='source ~/dotfiles/.bashrc'
+alias szr='source ~/dotfiles/.zshrc'
 
 
 # EveryDayTaskCommand エイリアス
@@ -30,6 +34,7 @@ alias englishTask='python3 /Users/miyazonoeiji/projects/python/everdayTask/start
 alias checkWeb='python3 /Users/miyazonoeiji/projects/python/everdayTask/startWebSite.py'
 alias checkBlog='python3 /Users/miyazonoeiji/projects/python/everdayTask/startBlog.py'
 alias checkYoutube='python3 /Users/miyazonoeiji/projects/python/everdayTask/startYouTube.py'
+
 
 # githubのエイリアス
 alias github='open https://github.com/'
@@ -41,8 +46,10 @@ alias udemy='open https://www.udemy.com/home/my-courses/learning/'
 alias techmaster='open https://master.tech-camp.in/'
 alias techcamp='python3 /Users/miyazonoeiji/projects/python/jobcan/jobcan.py'
 
+
 # neovimのエイリアス
 alias vi='nvim'
+
 
 # KeyboardCleabTool起動
 alias keystop='open -a /Applications/KeyboardCleanTool.app/'
@@ -60,6 +67,13 @@ alias csz='chsh -s /bin/zsh'
 # tmux起動
 alias tmux_custom='tmux new-session \; source-file ~/.tmux/session'
 
+
+#alias tmux
+alias tm='tmux'
+alias ta="tmux a"
+alias tl="tmux ls"
+alias tk="tmux kill-session"
+alias tfin="tmux kill-server"
 
 #ls -Gのcolor設定
   # 設定できる属性とデフォルト色
