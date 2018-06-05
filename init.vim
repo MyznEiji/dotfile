@@ -113,3 +113,11 @@ augroup ctags
   autocmd!
   autocmd BufWritePost * call s:execute_ctags()
 augroup END
+
+
+" split horizontally with ctrl+k
+nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
+" tagsジャンプの時に複数ある時は一覧表示
+nnoremap <C-]> g<C-]> 
+
+

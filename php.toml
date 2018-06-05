@@ -1,19 +1,19 @@
 #------------------------------------
 # for php
 #------------------------------------
-[[plugins]] #debugger interface with xdebug
-repo = 'joonty/vdebug'
-on_ft = ['php']
-
-[[plugins]] #blade syntax
-repo = 'jwalton512/vim-blade'
-on_ft = ['php', 'blade']
-
-[[plugins]] #php formatter
-repo = 'beanworks/vim-phpfmt'
-on_ft = ['php']
-
-[[plugins]] #php completion
-repo = 'lvht/phpcd.vim'
-on_ft = ['php']
+ [[plugins]] #debugger interface with xdebug
+ repo = 'joonty/vdebug'
+ on_ft = ['php']
+ 
+ [[plugins]] #blade syntax
+ repo = 'jwalton512/vim-blade'
+ on_ft = ['php', 'blade']
+ 
+ [[plugins]] #php formatter
+ repo = 'beanworks/vim-phpfmt'
+ on_ft = ['php']
+ 
+ [[plugins]] #php completion
+ repo = 'lvht/phpcd.vim'
+ on_ft = ['php']
 #------------------------------------

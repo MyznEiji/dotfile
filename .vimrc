@@ -71,6 +71,9 @@ set mouse=a
 set showcmd
 " ◆や○文字が崩れる問題を解決"
 set ambiwidth=double
+
+
+
 " for ctags
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
@@ -100,6 +103,7 @@ augroup ctags
 augroup END
 
 
+
 " 操作・入力系
 " インサートモードでbackspaceを有効に
 set backspace=indent,eol,start
@@ -122,6 +126,9 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
 
 let g:python3_host_prog = expand('/usr/local/bin/python3')
+
+
+
 
 
 

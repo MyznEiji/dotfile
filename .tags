@@ -7,9 +7,11 @@
 !_TAG_PROGRAM_VERSION	0.0.0	/7e087c5/
 *	.vimrc	/^vnoremap <silent> * "vy\/\\V<C-r>=substitute(escape(@v, '\\\/'), "\\n", '\\\\n', 'g')<CR><CR>$/;"	m
 /	.vimrc	/^cnoremap <expr> \/ getcmdtype() == '\/' ? '\\\/' : '\/'$/;"	m
+<C-]>	init.vim	/^nnoremap <C-]> g<C-]> $/;"	m
 <C-h>	.vimrc	/^nnoremap <C-h> <C-w>h$/;"	m
 <C-j>	.vimrc	/^nnoremap <C-j> <C-w>j$/;"	m
 <C-k>	.vimrc	/^nnoremap <C-k> <C-w>k$/;"	m
+<C-k>	init.vim	/^nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>$/;"	m
 <C-l>	.vimrc	/^nnoremap <C-l> <C-w>l$/;"	m
 ?	.vimrc	/^cnoremap <expr> ? getcmdtype() == '?' ? '\\?' : '?'$/;"	m
 EOH	bin/wifi	/^        cat 1>&2 <<-'EOH'$/;"	h
