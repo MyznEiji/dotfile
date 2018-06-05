@@ -16,7 +16,6 @@ filetype off
 set t_Co=256
 " エンコード, ファイルエンコード
 set encoding=utf-8
-set fileencoding=utf-8
 " スクロールする時に下が見えるようにする
 set scrolloff=5
 " .swapファイルを作らない
@@ -72,6 +71,33 @@ set mouse=a
 set showcmd
 " ◆や○文字が崩れる問題を解決"
 set ambiwidth=double
+" for ctags
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
+
+set tags=.tags;$HOME
+
+function! s:execute_ctags() abort
+  " 探すタグファイル名
+  let tag_name = '.tags'
+  " ディレクトリを遡り、タグファイルを探し、パス取得
+  let tags_path = findfile(tag_name, '.;')
+  " タグファイルパスが見つからなかった場合
+  if tags_path ==# ''
+    return
+  endif
+
+  " タグファイルのディレクトリパスを取得
+  " `:p:h`の部分は、:h filename-modifiersで確認
+  let tags_dirpath = fnamemodify(tags_path, ':p:h')
+  " 見つかったタグファイルのディレクトリに移動して、ctagsをバックグラウンド実行（エラー出力破棄）
+  execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
+endfunction
+
+augroup ctags
+  autocmd!
+  autocmd BufWritePost * call s:execute_ctags()
+augroup END
 
 
 " 操作・入力系

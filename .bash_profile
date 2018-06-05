@@ -12,7 +12,9 @@ fi
   export PATH="$PATH:~/.composer/vendor/bin"
 
 # pythonの設定
-
+  export PYENV_ROOT="$HOME/.pyenv"
+  export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
 
 # C#(mono)の環境設定 "mcs" path
   export PATH=$PATH:/Applications/Unity/Unity2017.2.0f3.app/Contents/MonoBleedingEdge/bin/
@@ -61,3 +63,4 @@ fi
 
 # diff-highlightにPATHを通す
     export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+
