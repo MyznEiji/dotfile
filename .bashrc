@@ -65,7 +65,7 @@ alias csz='chsh -s /bin/zsh'
 
 
 # tmux起動
-alias tmux_custom='tmux new-session \; source-file ~/.tmux/session'
+alias tmux_cus='tmux new-session \; source-file ~/.tmux/session'
 
 
 #alias tmux
