@@ -1,1 +1,0 @@
-/Users/miyazonoeiji/dotfiles/.tmux/
