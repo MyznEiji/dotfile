@@ -40,50 +40,50 @@ endif
 
 
 
-" " :----------------------------------------------------------
-" " setting for vim editor
-" "----------------------------------------------------------
-" " show number 
-" set number
-" " use backspace
-" set backspace=indent,eol,start
-" " a case-insensitive search
-" set ignorecase
-" "  if a pattern contains an uppercase letter, it is case sensitive 
+" :----------------------------------------------------------
+" setting for vim editor
+"----------------------------------------------------------
+" show number 
+set number
+" use backspace
+set backspace=indent,eol,start
+" a case-insensitive search
+set ignorecase
+"  if a pattern contains an uppercase letter, it is case sensitive 
 " set smartcase
-" " enable Yank and Put
-" set clipboard=unnamed
-" " enable mouse
-" set mouse=a
-" " escape with jj
-" inoremap <silent> jj <ESC>
-" " On pressing tab, insert 2 spaces 
-" set expandtab
-" " show existing tab with 2 spaces width 
-" set tabstop=2
-" " when indenting with '>', use 2 spaces width 
-" set shiftwidth=2
-" " Highlight current line
-" set cursorline
-" " highlight matching parenthesis
-" set showmatch
-" " show status line 
-" set laststatus=2
-" " set terminal title
-" set title
-" " don't make swap file
-" set noswapfile
-" " automatically inserts one extra level of indentation in some cases 
-" set smartindent
-" " escape select when search some word with esc
-" nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>
-" " escape paste mode when leave insert mode
-" autocmd InsertLeave * set nopaste
-" " syntax in markdown file for bold, italic
-" " hi link htmlItalic WarningMsg
-" " hi link htmlBold WarningMsg
-" " hi link htmlBoldItalic ErrorMsg
-" "----------------------------------------------------------
+" enable Yank and Put
+set clipboard=unnamed
+" enable mouse
+set mouse=a
+" escape with jj
+inoremap <silent> jj <ESC>
+" On pressing tab, insert 2 spaces 
+set expandtab
+" show existing tab with 2 spaces width 
+set tabstop=2
+" when indenting with '>', use 2 spaces width 
+set shiftwidth=2
+" Highlight current line
+set cursorline
+" highlight matching parenthesis
+set showmatch
+" show status line 
+set laststatus=2
+" set terminal title
+set title
+" don't make swap file
+set noswapfile
+" automatically inserts one extra level of indentation in some cases 
+set smartindent
+" escape select when search some word with esc
+nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>
+" escape paste mode when leave insert mode
+autocmd InsertLeave * set nopaste
+" syntax in markdown file for bold, italic
+" hi link htmlItalic WarningMsg
+" hi link htmlBold WarningMsg
+" hi link htmlBoldItalic ErrorMsg
+"----------------------------------------------------------
 
 
 " ctags setting 
@@ -120,4 +120,9 @@ nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>
 " tagsジャンプの時に複数ある時は一覧表示
 nnoremap <C-]> g<C-]> 
 
+" keymap setting
+imap <C-p> <Up>
+imap <C-n> <Down>
+imap <C-b> <Left>
+imap <C-f> <Right>
 

@@ -4,6 +4,7 @@
  [[plugins]] #debugger interface with xdebug
  repo = 'joonty/vdebug'
  on_ft = ['php']
+
  
  [[plugins]] #blade syntax
  repo = 'jwalton512/vim-blade'

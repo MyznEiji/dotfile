@@ -128,8 +128,21 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 let g:python3_host_prog = expand('/usr/local/bin/python3')
 
 
+call plug#begin('~/.vim/plugged')
+
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+
+" vim-plugの説明を軽くしておきます
+" 
+" for はファイルタイプがphpならプラグインを読み込む 
+" do はプラグインインストール、アップデート時に実行する内容 
+Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+
+
+call plug#end()
 
 
 
-
+set t_kb=^H
 

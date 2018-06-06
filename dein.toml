@@ -1,3 +1,4 @@
+
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
@@ -13,28 +14,22 @@ hook_add = '''
     let g:lightline = {'colorscheme': 'wombat'}
 '''
 
-[[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
+
+# カーソル位置のコンテキストに合わせてftを切り替える
+[[plugins]]
 repo = 'osyo-manga/vim-precious'
 depends = ['context_filetype.vim']
 
-[[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
+# カーソル位置のコンテキストのftを判定するライブラリ
+[[plugins]]  
 repo = 'Shougo/context_filetype.vim'
 
-[[plugins]] # toml syntax
+# toml syntax
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
-[[plugins]] # カラースキーマ
-repo = 'w0ng/vim-hybrid'
-hook_add = '''
-  set background=dark
-  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
-  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
-  au MyAutoCmd VimEnter * nested colorscheme hybrid
-'''
 
-# other plugins
-# :
 
  
 [[plugins]]

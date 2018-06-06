@@ -8,11 +8,16 @@
 *	.vimrc	/^vnoremap <silent> * "vy\/\\V<C-r>=substitute(escape(@v, '\\\/'), "\\n", '\\\\n', 'g')<CR><CR>$/;"	m
 /	.vimrc	/^cnoremap <expr> \/ getcmdtype() == '\/' ? '\\\/' : '\/'$/;"	m
 <C-]>	init.vim	/^nnoremap <C-]> g<C-]> $/;"	m
+<C-b>	init.vim	/^imap <C-b> <Left>$/;"	m
+<C-f>	init.vim	/^imap <C-f> <Right>$/;"	m
 <C-h>	.vimrc	/^nnoremap <C-h> <C-w>h$/;"	m
 <C-j>	.vimrc	/^nnoremap <C-j> <C-w>j$/;"	m
 <C-k>	.vimrc	/^nnoremap <C-k> <C-w>k$/;"	m
 <C-k>	init.vim	/^nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>$/;"	m
 <C-l>	.vimrc	/^nnoremap <C-l> <C-w>l$/;"	m
+<C-n>	init.vim	/^imap <C-n> <Down>$/;"	m
+<C-p>	init.vim	/^imap <C-p> <Up>$/;"	m
+<ESC><ESC>	init.vim	/^nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>$/;"	m
 ?	.vimrc	/^cnoremap <expr> ? getcmdtype() == '?' ? '\\?' : '?'$/;"	m
 EOH	bin/wifi	/^        cat 1>&2 <<-'EOH'$/;"	h
 Edit	README.md	/^# Edit$/;"	c
@@ -28,6 +33,7 @@ get_remain	bin/battery	/^get_remain() {$/;"	f
 has	bin/battery	/^has() { type "$1" &>\/dev\/null; }$/;"	f
 is_charging	bin/battery	/^is_charging() {$/;"	f
 jj	.vimrc	/^inoremap jj <Esc>$/;"	m
+jj	init.vim	/^inoremap <silent> jj <ESC>$/;"	m
 loading	bin/loading	/^loading() {$/;"	f
 s:cache_home	init.vim	/^let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~\/.cache') : $XDG_CACHE_HOME$/;"	v
 s:dein_dir	init.vim	/^let s:dein_dir = s:cache_home . '\/dein'$/;"	v
