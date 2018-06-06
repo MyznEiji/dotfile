@@ -1,6 +1,22 @@
 #なるべくbashの設定を使う
 source ~/.bash_profile
 
+clear
+
+echo -e "\e[35m       __                                                  __          "
+echo -e "\e[35m      /\ \                                                /\ \         "
+echo -e "\e[35m   ___\ \ \___         ___ ___   __  __      ____     ____\ \ \___     "
+echo -e "\e[35m  / __ \ \  _  \     /  __  __ \/\ \/\ \    /\_ , \  / ,__\\ \  _  \   "
+echo -e "\e[35m /\ \L\ \ \ \ \ \    /\ \/\ \/\ \ \ \_\ \   \/_/  /_/\__,  \\ \ \ \ \  "
+echo -e "\e[35m \ \____/\ \_\ \_\   \ \_\ \_\ \_\/ ____ \    /\____\/\____/\ \_\ \_\ "
+echo -e "\e[35m  \/___/  \/_/\/_/    \/_/\/_/\/_/ /___/> \   \/____/\/___/  \/_/\/_/ "
+echo -e "\e[35m                                      /\__/ 			      "
+echo -e "\e[35m                                      \__/			      "
+
+
+
+
+
 #補完機能を使用する
 # autoload -U compinit
 # compinit -u 
@@ -533,6 +549,8 @@ fadd() {
 
 
 
+clear
+
 
 # tmux自動起動
 function is_exists() { type "$1" >/dev/null 2>&1; return $?; }
@@ -549,11 +567,14 @@ function tmux_automatically_attach_session()
         ! is_exists 'tmux' && return 1
 
         if is_tmux_runnning; then
-            echo "${fg_bold[yellow]} _____ __  __ _   ___  __ ${reset_color}"
-            echo "${fg_bold[yellow]}|_   _|  \/  | | | \ \/ / ${reset_color}"
-            echo "${fg_bold[yellow]}  | | | |\/| | | | |\  /  ${reset_color}"
-            echo "${fg_bold[yellow]}  | | | |  | | |_| |/  \  ${reset_color}"
-            echo "${fg_bold[yellow]}  |_| |_|  |_|\___//_/\_\ ${reset_color}"
+                  echo "" 
+     		  echo -e '\e[33m _|_|_|_|_|  _|      _|  _|    _|  _|      _| ' 
+		  echo -e '\e[33m     _|      _|_|  _|_|  _|    _|    _|  _|   '
+		  echo -e '\e[33m     _|      _|  _|  _|  _|    _|      _|     '
+		  echo -e '\e[33m     _|      _|      _|  _|    _|    _|  _|   ' 
+		  echo -e '\e[33m     _|      _|      _|    _|_|    _|      _| '  
+		
+
         elif is_screen_running; then
             echo "This is on screen."
         fi

@@ -4,6 +4,19 @@ if [ -f ~/.bashrc ]; then
 fi
 
 
+echo -e "\e[34m  .o8                          oooo                                                   .o88o.  o8o  oooo 		   "
+echo -e "\e[34m  888                           888                                                   888     ~~~   888 		   "
+echo -e "\e[34m  888oooo.   .oooo.    .oooo.o  888 .oo.               oo.ooooo.  oooo d8b  .ooooo.  o888oo  oooo   888   .ooooo.   "
+echo -e "\e[37m  d88   88b  P  )88b  d88(   8  888P Y88b               888   88b  888  8P d88   88b  888     888   888  d88   88b  "
+echo -e "\e[37m  888   888  .oP 888   *Y88b.   888   888               888   888  888     888   888  888     888   888  888ooo888  "
+echo -e "\e[37m  888   888 d8(  888  o.  )88b  888   888               888   888  888     888   888  888     888   888  888    .o  "
+echo -e "\e[31m   Y8bod8P   Y888* 8o 8 *888P  o888o o888o ooooooooooo  888bod8P  d888b     Y8bod8P  o888o   o888o o888o  Y8bod8P   "
+echo -e "\e[31m                                                        888							   "
+echo -e "\e[31m                                                       o888o							   "
+
+
+
+
 # rubyの設定
   eval "$(rbenv init -)"
 
@@ -17,7 +30,7 @@ fi
   eval "$(pyenv init -)"
 
 # C#(mono)の環境設定 "mcs" path
-  export PATH=$PATH:/Applications/Unity/Unity2017.2.0f3.app/Contents/MonoBleedingEdge/bin/
+  export PATH="$PATH:/Applications/Unity/Unity2017.2.0f3.app/Contents/MonoBleedingEdge/bin/"
 
 
 
@@ -41,7 +54,7 @@ fi
     # 紫	\[\e[0;35m\]色をつけたい部分\[\e[0;0m\]
     # 水	\[\e[0;36m\]色をつけたい部分\[\e[0;0m\]
     # 白	\[\e[0;37m\]色をつけたい部分\[\e[0;0m\]
-    source /usr/local/etc/bash_completion.d/git-prompt.sh
+    source PATH="/usr/local/etc/bash_completion.d/git-prompt.sh"
     # source /usr/local/etc/bash_completion.d/git-completion.bash
     GIT_PS1_SHOWDIRTYSTATE=true
     export PS1="\n\n■  \[\e[0;31m\]\u\[\e[0;0m\] \[\e[0;35m\]\w\[\e[0;0m\] \t \[\033[00m\]\[\033[31m\]$(__git_ps1 %s)\[\033[00m\]\n\[\e[0;36m\]\$\[\e[0;0m\] "
@@ -53,7 +66,7 @@ fi
     export ACCESS_TOKEN_SECRET=GMVMvrLUCCnkhvzuxfVwHufc2q5aoB3cJ0oRWtPE6WYDJ
 
 # Homebrew settings
-    export PATH=/usr/local/bin:$PATH
+    export PATH="/usr/local/bin:$PATH"
 
 # bzip2 settings
     export PATH="/usr/local/opt/bzip2/bin:$PATH"
@@ -62,5 +75,27 @@ fi
     export XDG_CONFIG_HOME="$HOME/.config"
 
 # diff-highlightにPATHを通す
-    export PATH=$PATH:/usr/local/share/git-core/contrib/diff-highlight
+    export PATH="$PATH:/usr/local/share/git-core/contrib/diff-highlight"
 
+# サーチパスに~/binを追加
+    export PATH="$PATH:~/bin"
+
+# PATHのユニーク処理
+_path=""
+for _p in $(echo $PATH | tr ':' ' '); do
+  case ":${_path}:" in
+    *:"${_p}":* )
+      ;;
+    * )
+      if [ "$_path" ]; then
+        _path="$_path:$_p"
+      else
+        _path=$_p
+      fi
+      ;;
+  esac
+done
+PATH=$_path
+
+unset _p
+unset _path

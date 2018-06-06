@@ -28,6 +28,7 @@ get_remain	bin/battery	/^get_remain() {$/;"	f
 has	bin/battery	/^has() { type "$1" &>\/dev\/null; }$/;"	f
 is_charging	bin/battery	/^is_charging() {$/;"	f
 jj	.vimrc	/^inoremap jj <Esc>$/;"	m
+loading	bin/loading	/^loading() {$/;"	f
 s:cache_home	init.vim	/^let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~\/.cache') : $XDG_CACHE_HOME$/;"	v
 s:dein_dir	init.vim	/^let s:dein_dir = s:cache_home . '\/dein'$/;"	v
 s:dein_repo_dir	init.vim	/^let s:dein_repo_dir = s:dein_dir . '\/repos\/github.com\/Shougo\/dein.vim'$/;"	v
