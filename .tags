@@ -7,13 +7,11 @@
 !_TAG_PROGRAM_VERSION	0.0.0	/7e087c5/
 *	.vimrc	/^vnoremap <silent> * "vy\/\\V<C-r>=substitute(escape(@v, '\\\/'), "\\n", '\\\\n', 'g')<CR><CR>$/;"	m
 /	.vimrc	/^cnoremap <expr> \/ getcmdtype() == '\/' ? '\\\/' : '\/'$/;"	m
-<C-]>	init.vim	/^nnoremap <C-]> g<C-]> $/;"	m
 <C-b>	init.vim	/^imap <C-b> <Left>$/;"	m
 <C-f>	init.vim	/^imap <C-f> <Right>$/;"	m
 <C-h>	.vimrc	/^nnoremap <C-h> <C-w>h$/;"	m
 <C-j>	.vimrc	/^nnoremap <C-j> <C-w>j$/;"	m
 <C-k>	.vimrc	/^nnoremap <C-k> <C-w>k$/;"	m
-<C-k>	init.vim	/^nnoremap <C-k> :split<CR> :exe("tjump ".expand('<cword>'))<CR>$/;"	m
 <C-l>	.vimrc	/^nnoremap <C-l> <C-w>l$/;"	m
 <C-n>	init.vim	/^imap <C-n> <Down>$/;"	m
 <C-p>	init.vim	/^imap <C-p> <Up>$/;"	m
@@ -28,6 +26,8 @@ ctags	.vimrc	/^augroup ctags$/;"	a
 ctags	init.vim	/^augroup ctags$/;"	a
 dotfiles	README.md	/^# dotfiles$/;"	c
 g:python3_host_prog	.vimrc	/^let g:python3_host_prog = expand('\/usr\/local\/bin\/python3')$/;"	v
+g:python3_host_prog	init.vim	/^let g:python3_host_prog = expand('\/usr\/local\/bin\/python3')$/;"	v
+g:rc_dir	init.vim	/^  let g:rc_dir      = expand('~\/.config\/nvim')$/;"	v
 get_battery	bin/battery	/^get_battery() {$/;"	f
 get_remain	bin/battery	/^get_remain() {$/;"	f
 has	bin/battery	/^has() { type "$1" &>\/dev\/null; }$/;"	f
@@ -35,14 +35,14 @@ is_charging	bin/battery	/^is_charging() {$/;"	f
 jj	.vimrc	/^inoremap jj <Esc>$/;"	m
 jj	init.vim	/^inoremap <silent> jj <ESC>$/;"	m
 loading	bin/loading	/^loading() {$/;"	f
-s:cache_home	init.vim	/^let s:cache_home = empty($XDG_CACHE_HOME) ? expand('~\/.cache') : $XDG_CACHE_HOME$/;"	v
-s:dein_dir	init.vim	/^let s:dein_dir = s:cache_home . '\/dein'$/;"	v
+s:dein_dir	init.vim	/^let s:dein_dir = expand('~\/.cache\/dein')$/;"	v
 s:dein_repo_dir	init.vim	/^let s:dein_repo_dir = s:dein_dir . '\/repos\/github.com\/Shougo\/dein.vim'$/;"	v
 s:execute_ctags	.vimrc	/^function! s:execute_ctags() abort$/;"	f
 s:execute_ctags	init.vim	/^function! s:execute_ctags() abort$/;"	f
-s:lazy_file	init.vim	/^let s:lazy_file = fnamemodify(expand('<sfile>'), ':h').'\/lazy.toml'$/;"	v
-s:php_file	init.vim	/^let s:php_file = fnamemodify(expand('<sfile>'), ':h').'\/php.toml'$/;"	v
-s:python_file	init.vim	/^let s:python_file = fnamemodify(expand('<sfile>'), ':h').'\/python.toml'$/;"	v
-s:toml_file	init.vim	/^let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'\/dein.toml'$/;"	v
+s:js_toml	init.vim	/^  let s:js_toml    = g:rc_dir . '\/javascript.toml'$/;"	v
+s:lazy_toml	init.vim	/^  let s:lazy_toml   = g:rc_dir . '\/lazy.toml'$/;"	v
+s:php_toml	init.vim	/^  let s:php_toml    = g:rc_dir . '\/php.toml'$/;"	v
+s:python_toml	init.vim	/^  let s:python_toml = g:rc_dir . '\/python.toml'$/;"	v
+s:toml	init.vim	/^  let s:toml        = g:rc_dir . '\/dein.toml'$/;"	v
 t	.tmux.conf	/^bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode/;"	k
 v	.vimrc	/^vnoremap v $h$/;"	m

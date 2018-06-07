@@ -13,3 +13,4 @@
  ln -s $HOME/dotfiles/dein.toml $HOME/.config/nvim/dein.toml
  ln -s $HOME/dotfiles/python.toml $HOME/.config/nvim/python.toml
  ln -s $HOME/dotfiles/php.toml $HOME/.config/nvim/php.toml
+ ln -s $HOME/dotfiles/javascript.toml $HOME/.config/nvim/javascript.toml
