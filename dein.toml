@@ -2,13 +2,17 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
+
+# スニペットの読み込み
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
  
-
+# 補完
 [[plugins]]
 repo = 'Shougo/neocomplete.vim'
 
+
+# treeの表示、ウィンドウ関係のマッピング
 [[plugins]]
 repo = 'scrooloose/nerdtree'
 hook_add = '''
@@ -73,6 +77,9 @@ hook_add = '''
 '''
 depends = ['nerdtree']
 
+
+
+# 言語ごとに文法チェックの設定
 [[plugins]]
 repo = 'scrooloose/syntastic'
 hook_add = '''
@@ -105,10 +112,7 @@ let g:syntastic_style_warning_symbol = '⚠'
 '''
 
 
-[[plugins]]
-repo = 'szw/vim-tags'
-
-
+# ステータスバーの設定
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 hook_add = '''
@@ -130,7 +134,7 @@ hook_add = '''
 depends = ['vim-airline_themes']
 
 
-
+# ステータスバーの設定
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
