@@ -110,7 +110,7 @@ autocmd InsertLeave * set nopaste
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 
-set tags=.tags;$HOME
+set tags=.tags;~
 
 function! s:execute_ctags() abort
   " 探すタグファイル名
