@@ -12,6 +12,14 @@ repo = 'Shougo/neosnippet-snippets'
 repo = 'Shougo/neocomplete.vim'
 
 
+# vimの言語の拡張
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
+hook_add = '''
+    let g:polyglot_disabled = ['jsx']
+'''
+
+
 # treeの表示、ウィンドウ関係のマッピング
 [[plugins]]
 repo = 'scrooloose/nerdtree'
@@ -215,4 +223,9 @@ hook_add = '''
   set termguicolors
   colorscheme deep-space
 '''
+
+
+# Git系
+[[plugins]]
+repo = 'tpope/vim-fugitive'
 

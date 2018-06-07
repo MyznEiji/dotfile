@@ -45,6 +45,10 @@ repo = 'Shougo/neomru.vim'
 on_source = 'denite.nvim'
 
 
+# emacs key
+[[plugins]]
+repo = 'kentarosasaki/vim-emacs-bindings'
+on_i = 1
 
 # スニペット
 [[plugins]]

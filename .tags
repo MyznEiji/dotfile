@@ -7,15 +7,15 @@
 !_TAG_PROGRAM_VERSION	0.0.0	/7e087c5/
 *	.vimrc	/^vnoremap <silent> * "vy\/\\V<C-r>=substitute(escape(@v, '\\\/'), "\\n", '\\\\n', 'g')<CR><CR>$/;"	m
 /	.vimrc	/^cnoremap <expr> \/ getcmdtype() == '\/' ? '\\\/' : '\/'$/;"	m
-<C-b>	init.vim	/^imap <C-b> <Left>$/;"	m
-<C-f>	init.vim	/^imap <C-f> <Right>$/;"	m
 <C-h>	.vimrc	/^nnoremap <C-h> <C-w>h$/;"	m
 <C-j>	.vimrc	/^nnoremap <C-j> <C-w>j$/;"	m
 <C-k>	.vimrc	/^nnoremap <C-k> <C-w>k$/;"	m
 <C-l>	.vimrc	/^nnoremap <C-l> <C-w>l$/;"	m
-<C-n>	init.vim	/^imap <C-n> <Down>$/;"	m
-<C-p>	init.vim	/^imap <C-p> <Up>$/;"	m
 <ESC><ESC>	init.vim	/^nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>$/;"	m
+<S-h>	init.vim	/^noremap <S-h>   ^$/;"	m
+<S-j>	init.vim	/^noremap <S-j>   }$/;"	m
+<S-k>	init.vim	/^noremap <S-k>   {$/;"	m
+<S-l>	init.vim	/^noremap <S-l>   \$$/;"	m
 ?	.vimrc	/^cnoremap <expr> ? getcmdtype() == '?' ? '\\?' : '?'$/;"	m
 EOH	bin/wifi	/^        cat 1>&2 <<-'EOH'$/;"	h
 Edit	README.md	/^# Edit$/;"	c
