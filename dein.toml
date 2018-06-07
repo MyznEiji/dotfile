@@ -3,14 +3,6 @@
 repo = 'Shougo/dein.vim'
 
 
-
-[[plugins]]
-repo = 'itchyny/lightline.vim'
-hook_add = '''
-    let g:lightline = {'colorscheme': 'wombat'}
-'''
-
-
 # カーソル位置のコンテキストに合わせてftを切り替える
 [[plugins]]
 repo = 'osyo-manga/vim-precious'
