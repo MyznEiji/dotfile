@@ -53,14 +53,7 @@ if dein#check_install()
   call dein#install()
 endif
 
-
-
-
-
-" プラグイン以外のその他設定が続く
-
-
-" :----------------------------------------------------------
+"----------------------------------------------------------
 " setting for vim editor
 "----------------------------------------------------------
 " show number 
@@ -103,6 +96,7 @@ autocmd InsertLeave * set nopaste
 " hi link htmlItalic WarningMsg
 " hi link htmlBold WarningMsg
 " hi link htmlBoldItalic ErrorMsg
+
 "----------------------------------------------------------
 
 

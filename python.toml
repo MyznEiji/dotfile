@@ -1,10 +1,6 @@
 
 # python設定
 
-[[plugins]]
-repo = 'hynek/vim-python-pep8-indent'
-on_ft = ['python', 'py']
-
 
 [[plugins]]
 repo = 'davidhalter/jedi-vim'
@@ -19,9 +15,4 @@ hook_add = '''
   " ポップアップを表示しない
   autocmd FileType python setlocal completeopt-=preview
   '''
-
-[[plugins]]
-repo = 'andviro/flake8-vim'
-on_ft = ['python', 'py']
-
 
