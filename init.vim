@@ -1,4 +1,4 @@
-if !&compatible
+if &compatible
   set nocompatible
 endif
 
@@ -70,7 +70,7 @@ set backspace=indent,eol,start
 " a case-insensitive search
 set ignorecase
 "  if a pattern contains an uppercase letter, it is case sensitive 
-" set smartcase
+set smartcase
 " enable Yank and Put
 set clipboard=unnamed
 " enable mouse
