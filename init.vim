@@ -53,6 +53,9 @@ if dein#check_install()
   call dein#install()
 endif
 
+
+
+
 "----------------------------------------------------------
 " setting for vim editor
 "----------------------------------------------------------
@@ -116,7 +119,7 @@ function! s:execute_ctags() abort
     return
   endif
 
-  " タグファイルのディレクトリパスを取得
+ " タグファイルのディレクトリパスを取得
   " `:p:h`の部分は、:h filename-modifiersで確認
   let tags_dirpath = fnamemodify(tags_path, ':p:h')
   " 見つかったタグファイルのディレクトリに移動して、ctagsをバックグラウンド実行（エラー出力破棄）
@@ -136,5 +139,7 @@ imap <C-n> <Down>
 imap <C-b> <Left>
 imap <C-f> <Right>
 
+" リーダーキーをスペースに設定
+let mapleader = "\<Space>"
 
 let g:python3_host_prog = expand('/usr/local/bin/python3')

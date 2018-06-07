@@ -35,6 +35,7 @@ is_charging	bin/battery	/^is_charging() {$/;"	f
 jj	.vimrc	/^inoremap jj <Esc>$/;"	m
 jj	init.vim	/^inoremap <silent> jj <ESC>$/;"	m
 loading	bin/loading	/^loading() {$/;"	f
+mapleader	init.vim	/^let mapleader = "\\<Space>"$/;"	v
 s:dein_dir	init.vim	/^let s:dein_dir = expand('~\/.cache\/dein')$/;"	v
 s:dein_repo_dir	init.vim	/^let s:dein_repo_dir = s:dein_dir . '\/repos\/github.com\/Shougo\/dein.vim'$/;"	v
 s:execute_ctags	.vimrc	/^function! s:execute_ctags() abort$/;"	f

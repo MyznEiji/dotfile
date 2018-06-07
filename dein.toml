@@ -2,23 +2,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-
-# カーソル位置のコンテキストに合わせてftを切り替える
-[[plugins]]
-repo = 'osyo-manga/vim-precious'
-depends = ['context_filetype.vim']
-
-# カーソル位置のコンテキストのftを判定するライブラリ
-[[plugins]]  
-repo = 'Shougo/context_filetype.vim'
-
-# toml syntax
-[[plugins]]
-repo = 'cespare/vim-toml'
-on_ft = 'toml'
-
-
-
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
  
@@ -64,6 +47,8 @@ hook_add = '''
   nnoremap sQ :<C-u>bd<CR>
   nnoremap sb :<C-u>Unite buffer_tab -buffer-name=file<CR>
   nnoremap sB :<C-u>Unite buffer -buffer-name=file<CR>
+  nnoremap s- <C-w>-
+  nnoremap s+ <C-w>+
 " when open nerdtree, the cursor is on the file
 function s:MoveToFileAtStart()
   call feedkeys("\<Space>")
@@ -95,7 +80,6 @@ hook_add = '''
 " syntastic
 " --------------------------------
 set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 0
@@ -145,5 +129,85 @@ hook_add = '''
 '''
 depends = ['vim-airline_themes']
 
+
+
 [[plugins]]
 repo = 'vim-airline/vim-airline-themes'
+
+
+# インデントの表示
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+  " indent line type |
+  set list lcs=tab:\|\
+'''
+
+# ファイル検索(Ctr + p)
+[[plugins]]
+repo = 'ctrlpvim/ctrlp.vim'
+hook_add = '''
+  " show hidden file
+  let g:ctrlp_show_hidden = 1
+'''
+
+# コメントアウト
+[[plugins]]
+repo = 'tomtom/tcomment_vim'
+hook_add = '''
+  " tcommentで使用する形式を追加
+  if !exists('g:tcomment_types')
+    let g:tcomment_types = {}
+  endif
+  let g:tcomment_types = {
+        \'php_surround' : "<?php %s ?>",
+        \'eruby_surround' : "<%% %s %%>",
+        \'eruby_surround_minus' : "<%% %s -%%>",
+        \'eruby_surround_equality' : "<%%= %s %%>",
+  \}
+  
+  " マッピングを追加
+  function! SetErubyMapping2()
+    nmap <buffer> <C-_>c :TCommentAs eruby_surround<CR>
+    nmap <buffer> <C-_>- :TCommentAs eruby_surround_minus<CR>
+    nmap <buffer> <C-_>= :TCommentAs eruby_surround_equality<CR>
+  
+    vmap <buffer> <C-_>c :TCommentAs eruby_surround<CR>
+    vmap <buffer> <C-_>- :TCommentAs eruby_surround_minus<CR>
+    vmap <buffer> <C-_>= :TCommentAs eruby_surround_equality<CR>
+  endfunction
+  
+  " erubyのときだけ設定を追加
+  au FileType eruby call SetErubyMapping2()
+  " phpのときだけ設定を追加
+  au FileType php nmap <buffer><C-_>c :TCommentAs php_surround<CR>
+  au FileType php vmap <buffer><C-_>c :TCommentAs php_surround<CR>
+'''
+
+
+# ウインドウの大きさを変更する
+[[plugins]]
+repo = 'kana/vim-submode'
+hook_add = '''
+  " ウィンドウサイズの変更キーを簡易化する
+  " [C-w],[+]または、[C-w],[-]
+  call submode#enter_with('winsize', 'n', '', '<C-w>>', '<C-w>>')
+  call submode#enter_with('winsize', 'n', '', '<C-w><', '<C-w><')
+  call submode#enter_with('winsize', 'n', '', '<C-w>+', '<C-w>-')
+  call submode#enter_with('winsize', 'n', '', '<C-w>-', '<C-w>+')
+  call submode#map('winsize', 'n', '', '>', '<C-w>>')
+  call submode#map('winsize', 'n', '', '<', '<C-w><')
+  call submode#map('winsize', 'n', '', '+', '<C-w>-')
+  call submode#map('winsize', 'n', '', '-', '<C-w>+')
+'''
+
+
+# カラースキームを設定
+[[plugins]]
+repo = 'tyrannicaltoucan/vim-deep-space'
+hook_add = '''
+  set background=dark
+  set termguicolors
+  colorscheme deep-space
+'''
+
