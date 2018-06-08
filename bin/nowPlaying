@@ -1,7 +1,13 @@
 #!/usr/bin/env osascript
 
-tell application "iTunes"
-    set trackName to name of current track
-    set trackArtist to artist of current track
-    return "Now Playing :"   & " #[fg=yellow, bg=black] " &  trackName & " / " & trackArtist & " #[default] "
-end tell
+if application "iTunes" is running
+  tell application "iTunes"
+      set trackName to name of current track
+      set trackArtist to artist of current track
+      return "Now Playing :"   & " #[fg=yellow, bg=black] " &  trackName & " / " & trackArtist & " #[default] "
+  end tell
+else
+  return "iTunes not running"
+end if
+
+

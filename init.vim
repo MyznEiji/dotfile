@@ -59,13 +59,13 @@ endif
 "----------------------------------------------------------
 " setting for vim editor
 "----------------------------------------------------------
-" show number 
+" show number
 set number
 " use backspace
 set backspace=indent,eol,start
 " a case-insensitive search
 set ignorecase
-"  if a pattern contains an uppercase letter, it is case sensitive 
+"  if a pattern contains an uppercase letter, it is case sensitive
 set smartcase
 " enable Yank and Put
 set clipboard=unnamed
@@ -73,11 +73,11 @@ set clipboard=unnamed
 set mouse=a
 " escape with jj
 inoremap <silent> jj <ESC>
-" On pressing tab, insert 2 spaces 
+" On pressing tab, insert 2 spaces
 set expandtab
-" show existing tab with 2 spaces width 
+" show existing tab with 2 spaces width
 set tabstop=2
-" when indenting with '>', use 2 spaces width 
+" when indenting with '>', use 2 spaces width
 set shiftwidth=2
 " Highlight current line
 set cursorline
@@ -85,13 +85,13 @@ set cursorline
 set cursorcolumn
 " highlight matching parenthesis
 set showmatch
-" show status line 
+" show status line
 set laststatus=2
 " set terminal title
 set title
 " don't make swap file
 set noswapfile
-" automatically inserts one extra level of indentation in some cases 
+" automatically inserts one extra level of indentation in some cases
 set smartindent
 " escape select when search some word with esc
 nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>
@@ -105,7 +105,7 @@ autocmd InsertLeave * set nopaste
 "----------------------------------------------------------
 
 
-" ctags setting 
+" ctags setting
 set fileformats=unix,dos,mac
 set fileencodings=utf-8,sjis
 
@@ -168,7 +168,10 @@ noremap <S-j>   }
 noremap <S-k>   {
 noremap <S-l>   $
 
+
+
 " リーダーキーをスペースに設定
 let mapleader = "\<Space>"
 
 let g:python3_host_prog = expand('/usr/local/bin/python3')
+

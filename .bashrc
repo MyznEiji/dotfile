@@ -1,14 +1,14 @@
-echo -e "\e[32m       ___           ___           ___           ___           ___           ___      " 
-echo -e "\e[32m      /\  \         /\  \         /\  \         /\__\         /\  \         /\  \     " 
-echo -e "\e[32m     /::\  \       /::\  \       /::\  \       /:/  /        /::\  \       /::\  \    " 
-echo -e "\e[32m    /:/\:\  \     /:/\:\  \     /:/\ \  \     /:/__/        /:/\:\  \     /:/\:\  \   " 
-echo -e "\e[32m   /::\~\:\__\   /::\~\:\  \   _\:\~\ \  \   /::\  \ ___   /::\~\:\  \   /:/  \:\  \  "    
+echo -e "\e[32m       ___           ___           ___           ___           ___           ___      "
+echo -e "\e[32m      /\  \         /\  \         /\  \         /\__\         /\  \         /\  \     "
+echo -e "\e[32m     /::\  \       /::\  \       /::\  \       /:/  /        /::\  \       /::\  \    "
+echo -e "\e[32m    /:/\:\  \     /:/\:\  \     /:/\ \  \     /:/__/        /:/\:\  \     /:/\:\  \   "
+echo -e "\e[32m   /::\~\:\__\   /::\~\:\  \   _\:\~\ \  \   /::\  \ ___   /::\~\:\  \   /:/  \:\  \  "
 echo -e "\e[32m  /:/\:\ \:|__| /:/\:\ \:\__\ /\ \:\ \ \__\ /:/\:\  /\__\ /:/\:\ \:\__\ /:/__/ \:\__\ "
 echo -e "\e[32m  \:\~\:\/:/  / \/__\:\/:/  / \:\ \:\ \/__/ \/__\:\/:/  / \/_|::\/:/  / \:\  \  \/__/ "
-echo -e "\e[32m   \:\ \::/  /       \::/  /   \:\ \:\__\        \::/  /     |:|::/  /   \:\  \       " 
-echo -e "\e[32m    \:\/:/  /        /:/  /     \:\/:/  /        /:/  /      |:|\/__/     \:\  \      " 
-echo -e "\e[32m     \::/__/        /:/  /       \::/  /        /:/  /       |:|  |        \:\__\     " 
-echo -e "\e[32m      ~~            \/__/         \/__/         \/__/         \|__|         \/__/     " 
+echo -e "\e[32m   \:\ \::/  /       \::/  /   \:\ \:\__\        \::/  /     |:|::/  /   \:\  \       "
+echo -e "\e[32m    \:\/:/  /        /:/  /     \:\/:/  /        /:/  /      |:|\/__/     \:\  \      "
+echo -e "\e[32m     \::/__/        /:/  /       \::/  /        /:/  /       |:|  |        \:\__\     "
+echo -e "\e[32m      ~~            \/__/         \/__/         \/__/         \|__|         \/__/     "
 
 
 
@@ -31,6 +31,9 @@ alias cd=cdls
 
 # history x fzf
 alias hisf="history | fzf"
+
+# find x fzf
+alias findf="find . | fzf"
 
 # shell系のエイリアス
 alias bp='vi ~/dotfiles/.bash_profile'
@@ -94,7 +97,7 @@ alias tfin="tmux kill-server"
 # 隠しファイルモードON
 show_hedden_files()
 {
-    defaults write com.apple.finder AppleShowAllFiles TRUE 
+    defaults write com.apple.finder AppleShowAllFiles TRUE
     killall Finder
 }
 alias sfile="show_hedden_files"
@@ -103,7 +106,7 @@ alias sfile="show_hedden_files"
 # 隠しファイルモードOFF
 hide_hedden_files()
 {
-     defaults write com.apple.finder AppleShowAllFiles FALSE  
+     defaults write com.apple.finder AppleShowAllFiles FALSE
      killall Finder
 }
 alias hfile="hide_hedden_files"
@@ -114,7 +117,7 @@ alias weather="curl wttr.in/Tokyo"
 
 
 # iTunesPlay
-alias mst="iTunesPlay"
+alias mrun="iTunesPlay"
 
 # iTunesStop
 alias mfin="iTunesStop"
