@@ -97,7 +97,7 @@ show_hedden_files()
     defaults write com.apple.finder AppleShowAllFiles TRUE 
     killall Finder
 }
-alias sfile=show_hedden_files
+alias sfile="show_hedden_files"
 
 
 # 隠しファイルモードOFF
@@ -106,7 +106,18 @@ hide_hedden_files()
      defaults write com.apple.finder AppleShowAllFiles FALSE  
      killall Finder
 }
-alias hfile=hide_hedden_files
+alias hfile="hide_hedden_files"
+
+
+# 天気予報
+alias weather="curl wttr.in/Tokyo"
+
+
+# iTunesPlay
+alias mst="iTunesPlay"
+
+# iTunesStop
+alias mfin="iTunesStop"
 
 #ls -Gのcolor設定
   # 設定できる属性とデフォルト色

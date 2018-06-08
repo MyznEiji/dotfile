@@ -353,7 +353,7 @@ PROMPT='
 ■  %F{1}%~%f
 %F{6}%#%f '
 # 現在時刻
-RPROMPT=$'`rprompt-git-current-branch`  %T%{\e[m%}'
+RPROMPT=$'`rprompt-git-current-branch` %*' 
 TMOUT=1
 TRAPALRM() {
   zle reset-prompt
