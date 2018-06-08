@@ -20,7 +20,7 @@ alias typora="open -a typora"
 alias less='less -X'
 # lsの結果を見やすくする
 alias ls="ls -GAF"
-
+alias lsf="ls | fzf"
 # cdと同時にlsする
 function cdls() {
   # cdがaliasでループするので\をつける
@@ -29,6 +29,8 @@ function cdls() {
 }
 alias cd=cdls
 
+# history x fzf
+alias hisf="history | fzf"
 
 # shell系のエイリアス
 alias bp='vi ~/dotfiles/.bash_profile'

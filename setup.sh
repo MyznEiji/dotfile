@@ -7,8 +7,14 @@
      ln -s $HOME/dotfiles/$file/ $HOME/$file/
  done
 
+
+ # ディレクトリ
  ln -s $HOME/dotfiles/bin $HOME/
  ln -s $HOME/dotfiles/.tmux $HOME/
+ ln -s $HOME/dotfiles/.git_template $HOME/
+ 
+
+ # toml
  ln -s $HOME/dotfiles/init.vim $HOME/.config/nvim/init.vim
  ln -s $HOME/dotfiles/lazy.toml $HOME/.config/nvim/lazy.toml
  ln -s $HOME/dotfiles/dein.toml $HOME/.config/nvim/dein.toml

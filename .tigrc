@@ -314,7 +314,7 @@ bind main    <Esc>r ?git rebase %(commit)
 bind diff    <Esc>r ?git rebase %(commit)
 
 # I で rebase -i
-bind main    I      ?git rebase -i %(branch)
+bind main    I      ?git rebase -i 
 bind diff    I      ?git rebase -i %(branch)
 bind refs    I      ?git rebase -i %(branch)
 bind main    <Esc>i ?git rebase -i %(commit)
