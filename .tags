@@ -20,18 +20,13 @@
 EOH	bin/wifi	/^        cat 1>&2 <<-'EOH'$/;"	h
 Edit	README.md	/^# Edit$/;"	c
 MyAutoCmd	init.vim	/^augroup MyAutoCmd$/;"	a
-battery_color_ansi	bin/battery	/^battery_color_ansi() {$/;"	f
-battery_color_tmux	bin/battery	/^battery_color_tmux() {$/;"	f
+Session	.tmux.conf	/^set-option -g status-left "TMUX #[fg=yellow,bg=black] Session: #S #[default] | #(osascript .\/bi/;"	k
 ctags	.vimrc	/^augroup ctags$/;"	a
 ctags	init.vim	/^augroup ctags$/;"	a
 dotfiles	README.md	/^# dotfiles$/;"	c
 g:python3_host_prog	.vimrc	/^let g:python3_host_prog = expand('\/usr\/local\/bin\/python3')$/;"	v
 g:python3_host_prog	init.vim	/^let g:python3_host_prog = expand('\/usr\/local\/bin\/python3')$/;"	v
 g:rc_dir	init.vim	/^  let g:rc_dir      = expand('~\/.config\/nvim')$/;"	v
-get_battery	bin/battery	/^get_battery() {$/;"	f
-get_remain	bin/battery	/^get_remain() {$/;"	f
-has	bin/battery	/^has() { type "$1" &>\/dev\/null; }$/;"	f
-is_charging	bin/battery	/^is_charging() {$/;"	f
 jj	.vimrc	/^inoremap jj <Esc>$/;"	m
 jj	init.vim	/^inoremap <silent> jj <ESC>$/;"	m
 loading	bin/loading	/^loading() {$/;"	f

@@ -81,6 +81,8 @@ set tabstop=2
 set shiftwidth=2
 " Highlight current line
 set cursorline
+" 列を強調表示
+set cursorcolumn
 " highlight matching parenthesis
 set showmatch
 " show status line 

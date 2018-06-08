@@ -1,0 +1,5 @@
+#!/bin/sh
+
+
+echo "Load Average : #[fg=yellow, bg=black] $(uptime | awk '{print $(NF-2)}') #[default]"
+
