@@ -89,10 +89,13 @@ set showmatch
 set laststatus=2
 " set terminal title
 set title
-" don't make swap file
-set noswapfile
 " automatically inserts one extra level of indentation in some cases
 set smartindent
+" Swapファイル？Backupファイル？前時代的すぎ
+" なので全て無効化する
+set nowritebackup
+set nobackup
+set noswapfile
 " escape select when search some word with esc
 nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>
 " escape paste mode when leave insert mode
