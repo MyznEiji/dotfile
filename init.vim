@@ -97,71 +97,74 @@ set smartindent
 nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>
 " escape paste mode when leave insert mode
 autocmd InsertLeave * set nopaste
-" syntax in markdown file for bold, italic
-" hi link htmlItalic WarningMsg
-" hi link htmlBold WarningMsg
-" hi link htmlBoldItalic ErrorMsg
-
-"----------------------------------------------------------
+" 折り返さない
+set nowrap
 
 
-" ctags setting
-set fileformats=unix,dos,mac
-set fileencodings=utf-8,sjis
 
-set tags=.tags;~
-
-function! s:execute_ctags() abort
-  " 探すタグファイル名
-  let tag_name = '.tags'
-  " ディレクトリを遡り、タグファイルを探し、パス取得
-  let tags_path = findfile(tag_name, '.;')
-  " タグファイルパスが見つからなかった場合
-  if tags_path ==# ''
-    return
-  endif
-
- " タグファイルのディレクトリパスを取得
-  " `:p:h`の部分は、:h filename-modifiersで確認
-  let tags_dirpath = fnamemodify(tags_path, ':p:h')
-  " 見つかったタグファイルのディレクトリに移動して、ctagsをバックグラウンド実行（エラー出力破棄）
-  execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
+" シンタックスハイライトの最大行数
+set synmaxcol=200
+" シンタックスハイライト
+syntax on
+" .vueシンタックスハイライト
+autocmd BufNewFile,BufRead *.vue set filetype=html
+" 全角スペースのハイライト
+function! ZenkakuSpace()
+    highlight ZenkakuSpace cterm=underline ctermfg=lightblue guibg=darkgray
 endfunction
+if has('syntax')
+    augroup ZenkakuSpace
+        autocmd!
+        autocmd ColorScheme * call ZenkakuSpace()
+        autocmd VimEnter,WinEnter,BufRead * let w:m1=matchadd('ZenkakuSpace', '　')
+    augroup END
+    call ZenkakuSpace()
+endif
 
-augroup ctags
-  autocmd!
-  autocmd BufWritePost * call s:execute_ctags()
-augroup END
+" for lightline.vim
+set laststatus=2
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'active': {
+  \   'left': [
+  \     ['mode', 'paste'],
+  \     ['readonly', 'filename', 'modified', 'anzu']
+  \   ]
+  \ },
+  \ 'component_function': {
+  \   'anzu': 'anzu#search_status'
+  \ }
+  \ }
 
 
 
 " keymap setting
-" imap <C-p> <Up>
-" imap <C-n> <Down>
-" imap <C-b> <Left>
-" imap <C-f> <Right>
-" imap <C-e> <END>
-" imap <C-a> <HOME>
-" imap <C-d> <Del>
-" imap <C-k> <C-r>=<SID>kill()<CR>
-"
-" function! s:kill()
-"   let [text_before, text_after] = s:split_line()
-"   if len(text_after) == 0
-"   ¦ normal! J
-"   else
-"   ¦ call setline(line('.'), text_before)
-"   endif
-"   return ''
-" endfunction
-"
-" function! s:split_line()
-"   let line_text = getline(line('.'))
-"   let text_after  = line_text[col('.')-1 :]
-"   let text_before = (col('.') > 1) ? line_text[: col('.')-2] : ''
-"   return [text_before, text_after]
-" endfunction
-"
+ imap <C-p> <Up>
+ imap <C-n> <Down>
+ imap <C-b> <Left>
+ imap <C-f> <Right>
+ imap <C-e> <END>
+ imap <C-a> <HOME>
+ imap <C-d> <Del>
+ imap <C-k> <C-r>=<SID>kill()<CR>
+
+ function! s:kill()
+   let [text_before, text_after] = s:split_line()
+   if len(text_after) == 0
+   ¦ normal! J
+   else
+   ¦ call setline(line('.'), text_before)
+   endif
+   return ''
+ endfunction
+
+ function! s:split_line()
+   let line_text = getline(line('.'))
+   let text_after  = line_text[col('.')-1 :]
+   let text_before = (col('.') > 1) ? line_text[: col('.')-2] : ''
+   return [text_before, text_after]
+ endfunction
+
 
 noremap <S-h>   ^
 noremap <S-j>   }
@@ -174,4 +177,37 @@ noremap <S-l>   $
 let mapleader = "\<Space>"
 
 let g:python3_host_prog = expand('/usr/local/bin/python3')
+
+
+
+" ctagsの設定
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
+
+
+" カレントディレクトリから、ホームディレクトリまで.tagsを探します
+set tags=.tags;$HOME
+
+function! s:execute_ctags() abort
+  " 探すタグファイル名
+  let tag_name = '.tags'
+  " ディレクトリを遡り、タグファイルを探し、パス取得
+  let tags_path = findfile(tag_name, '.;')
+  " タグファイルパスが見つからなかった場合
+  if tags_path ==# ''
+    return
+  endif
+
+  " タグファイルのディレクトリパスを取得
+  " `:p:h`の部分は、:h filename-modifiersで確認
+  let tags_dirpath = fnamemodify(tags_path, ':p:h')
+  " 見つかったタグファイルのディレクトリに移動して、ctagsをバックグラウンド実行（エラー出力破棄）
+  execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
+endfunction
+
+augroup ctags
+  autocmd!
+  autocmd BufWritePost * call s:execute_ctags()
+augroup END
+
 

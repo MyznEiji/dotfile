@@ -1,0 +1,4 @@
+#!/bin/bash
+
+
+gibo $1 >> .gitignore

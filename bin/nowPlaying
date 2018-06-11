@@ -6,8 +6,15 @@ if application "iTunes" is running
       set trackArtist to artist of current track
       return "Now Playing :"   & " #[fg=yellow, bg=black] " &  trackName & " / " & trackArtist & " #[default] "
   end tell
-else
-  return "iTunes not running"
-end if
+else if application "Spotify" is running
+ tell application "Spotify"
+    set currentState to player state as string
+    set currentArtist to artist of current track as string
+    set currentTrack to name of current track as string
+    return "Now Playing :"   & " #[fg=yellow, bg=black] " &  currentTrack & " / " & currentArtist & " #[default] "
 
+  end tell
+else
+  return "Music not running"
+end if
 

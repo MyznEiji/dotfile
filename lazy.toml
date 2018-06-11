@@ -54,9 +54,11 @@ on_i = 1
 [[plugins]]
 repo = 'Shougo/deoplete.nvim'
 hook_source = '''
+  " 一つ目の候補を選択状態にする
+  set completeopt+=noinsert
   let g:deoplete#enable_at_startup = 1
   inoremap <expr><tab> pumvisible() ? "\<C-n>" :
-        \ neosnippet#expandable_or_jumpable() ?
+       \ neosnippet#expandable_or_jumpable() ?
         \    "\<Plug>(neosnippet_expand_or_jump)" : "\<tab>"
 '''
 on_i = 1
@@ -64,9 +66,9 @@ on_i = 1
 [[plugins]]
 repo = 'Shougo/neosnippet'
 hook_source = '''
-  imap <C-k> <Plug>(neosnippet_expand_or_jump)
-  smap <C-k> <Plug>(neosnippet_expand_or_jump)
-  xmap <C-k> <Plug>(neosnippet_expand_target)
+  imap <C-s> <Plug>(neosnippet_expand_or_jump)
+"  smap <C-s> <Plug>(neosnippet_expand_or_jump)
+"  xmap <C-s> <Plug>(neosnippet_expand_target)
   if has('conceal')
     set conceallevel=2 concealcursor=niv
   endif
@@ -157,3 +159,14 @@ on_i = 1
 [[plugins]] #display color in css file
 repo = 'ap/vim-css-color'
 on_ft = ['css']
+
+
+[[plugins]]
+repo = 'mattn/emmet-vim'
+on_ft = ["html", "css", "php"]
+hook_add = '''
+  "keybinding with <ctrl+t+,>
+  let g:user_emmet_leader_key='<C-t>'
+
+ 
+'''

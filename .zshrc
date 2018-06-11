@@ -516,13 +516,13 @@ function tmux_automatically_attach_session()
         ! is_exists 'tmux' && return 1
 
         if is_tmux_runnning; then
-                  echo "" 
-     		  echo -e '\e[33m _|_|_|_|_|  _|      _|  _|    _|  _|      _| ' 
+                  echo ""
+     		  echo -e '\e[33m _|_|_|_|_|  _|      _|  _|    _|  _|      _| '
 		  echo -e '\e[33m     _|      _|_|  _|_|  _|    _|    _|  _|   '
 		  echo -e '\e[33m     _|      _|  _|  _|  _|    _|      _|     '
-		  echo -e '\e[33m     _|      _|      _|  _|    _|    _|  _|   ' 
-		  echo -e '\e[33m     _|      _|      _|    _|_|    _|      _| '  
-		
+		  echo -e '\e[33m     _|      _|      _|  _|    _|    _|  _|   '
+		  echo -e '\e[33m     _|      _|      _|    _|_|    _|      _| '
+
 
         elif is_screen_running; then
             echo "This is on screen."

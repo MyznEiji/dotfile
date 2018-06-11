@@ -4,9 +4,9 @@ repo = 'carlitux/deoplete-ternjs'
 on_ft = ['js']
 depends = ['deoplete.nvim']
 
-# [[plugins]] #js syntax
-# repo = 'othree/yajs.vim'
-# on_ft = ['js']
+ [[plugins]] #js syntax
+ repo = 'othree/yajs.vim'
+ on_ft = ['js']
 #
 # [[plugins]] #js fommater
 # repo = 'prettier/vim-prettier'

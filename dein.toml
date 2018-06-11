@@ -148,13 +148,13 @@ depends = ['vim-airline_themes']
 repo = 'vim-airline/vim-airline-themes'
 
 
-# インデントの表示
 [[plugins]]
-repo = 'Yggdroot/indentLine'
+repo = 'nathanaelkane/vim-indent-guides'
 hook_add = '''
-  " indent line type |
-  set list lcs=tab:\|\
+  let g:indent_guides_enable_on_vim_startup = 1
 '''
+
+
 
 # ファイル検索(Ctr + p)
 [[plugins]]
@@ -236,3 +236,30 @@ repo = 'tpope/vim-fugitive'
 repo = 'bronson/vim-trailing-whitespace'
 
 
+
+# j, k移動高速化
+[[plugins]]
+repo = 'rhysd/accelerated-jk'
+hook_add = '''
+  " for accelerated-jk
+  nmap j <Plug>(accelerated_jk_gj)
+  nmap k <Plug>(accelerated_jk_gk)
+'''
+
+
+# /検索強化
+[[plugins]]
+repo = 'osyo-manga/vim-anzu'
+hook_add = '''
+  " for vim-anzu
+  nmap n nzz<Plug>(anzu-update-search-status)
+  nmap N Nzz<Plug>(anzu-update-search-status)
+  nmap * <Plug>(anzu-star)
+  nmap # <Plug>(anzu-sharp)
+  nmap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><Plug>(anzu-clear-search-status)
+'''
+
+
+# f検索強化
+[[plugins]]
+repo = 'rhysd/clever-f.vim'

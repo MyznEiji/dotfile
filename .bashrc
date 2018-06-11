@@ -122,6 +122,11 @@ alias mrun="iTunesPlay"
 # iTunesStop
 alias mfin="iTunesStop"
 
+# gitignoreを生成
+alias gig="new_git_ignore"
+
+
+
 #ls -Gのcolor設定
   # 設定できる属性とデフォルト色
     # 順番	属性	デフォルト色(文字色 x 背景色)	設定
