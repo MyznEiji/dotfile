@@ -35,6 +35,7 @@ if dein#load_state(s:dein_dir)
   let s:python_toml = g:rc_dir . '/python.toml'
   let s:php_toml    = g:rc_dir . '/php.toml'
   let s:js_toml    = g:rc_dir . '/javascript.toml'
+  let s:ruby_toml    = g:rc_dir . '/ruby.toml'
 
   " TOML を読み込み、キャッシュしておく
   call dein#load_toml(s:toml,        {'lazy': 0})
@@ -42,6 +43,7 @@ if dein#load_state(s:dein_dir)
   call dein#load_toml(s:python_toml, {'lazy': 1})
   call dein#load_toml(s:php_toml,   {'lazy': 1})
   call dein#load_toml(s:js_toml,   {'lazy': 1})
+  call dein#load_toml(s:ruby_toml,   {'lazy': 1})
 
   " 設定終了
   call dein#end()
@@ -102,6 +104,7 @@ nnoremap <silent> <ESC><ESC> :<C-u>nohlsearch<CR><C-l>
 autocmd InsertLeave * set nopaste
 " 折り返さない
 set nowrap
+
 
 
 

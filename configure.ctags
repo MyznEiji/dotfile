@@ -58,6 +58,4 @@ ngdef=js
 --exclude=yarn.lock
 --exclude=config.js
 
---append=yes
---recurse=yes
 

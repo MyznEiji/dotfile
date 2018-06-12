@@ -76,6 +76,7 @@ alias keystop='open -a /Applications/KeyboardCleanTool.app/'
 
 # HowToをopen
 alias howto='typora ~/projects/markDown/howToUse'
+alias todo='typora ~/projects/markDown/stock/todo.md'
 
 
 # シェル切り替え
@@ -125,7 +126,11 @@ alias mfin="iTunesStop"
 # gitignoreを生成
 alias gig="new_git_ignore"
 
+# カレントディレクトリのパスをコピー
+alias pwdc='pwd|pbcopy'
 
+# 現在の時間を表示
+alias clock='while :; do printf "%s\r" "$(date +%T)"; sleep 1 ; done'
 
 #ls -Gのcolor設定
   # 設定できる属性とデフォルト色
