@@ -132,6 +132,12 @@ alias pwdc='pwd|pbcopy'
 # 現在の時間を表示
 alias clock='while :; do printf "%s\r" "$(date +%T)"; sleep 1 ; done'
 
+# よく使っているコマンドをランキング表示する方法
+command_ranking()
+{
+    history | awk 'BEGIN {FS="[ \t]+|\\|"} {print $3}' | sort | uniq -c | sort -nr | head
+}
+
 #ls -Gのcolor設定
   # 設定できる属性とデフォルト色
     # 順番	属性	デフォルト色(文字色 x 背景色)	設定

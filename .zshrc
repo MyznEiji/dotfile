@@ -568,4 +568,5 @@ function tmux_automatically_attach_session()
 }
  tmux_automatically_attach_session
 
-
+ # using rbenv on ruby
+ eval "$(rbenv init -)"
