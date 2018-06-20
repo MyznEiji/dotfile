@@ -132,6 +132,9 @@ alias pwdc='pwd|pbcopy'
 # 現在の時間を表示
 alias clock='while :; do printf "%s\r" "$(date +%T)"; sleep 1 ; done'
 
+# ctagsファイル作成
+alias ctags_cus='ctags -R -f tags'
+
 # よく使っているコマンドをランキング表示する方法
 command_ranking()
 {

@@ -197,11 +197,11 @@ set fileencodings=utf-8,sjis
 
 
 " カレントディレクトリから、ホームディレクトリまで.tagsを探します
-set tags=.tags;$HOME
+set tags=tags;$HOME
 
 function! s:execute_ctags() abort
   " 探すタグファイル名
-  let tag_name = '.tags'
+  let tag_name = 'tags'
   " ディレクトリを遡り、タグファイルを探し、パス取得
   let tags_path = findfile(tag_name, '.;')
   " タグファイルパスが見つからなかった場合

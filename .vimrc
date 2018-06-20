@@ -72,41 +72,7 @@ set showcmd
 " ◆や○文字が崩れる問題を解決"
 set ambiwidth=double
 
-
-
-" for ctags
-set fileformats=unix,dos,mac
-set fileencodings=utf-8,sjis
-
-set tags=.tags;$HOME
-
-function! s:execute_ctags() abort
-  " 探すタグファイル名
-  let tag_name = '.tags'
-  " ディレクトリを遡り、タグファイルを探し、パス取得
-  let tags_path = findfile(tag_name, '.;')
-  " タグファイルパスが見つからなかった場合
-  if tags_path ==# ''
-    return
-  endif
-
-  " タグファイルのディレクトリパスを取得
-  " `:p:h`の部分は、:h filename-modifiersで確認
-  let tags_dirpath = fnamemodify(tags_path, ':p:h')
-  " 見つかったタグファイルのディレクトリに移動して、ctagsをバックグラウンド実行（エラー出力破棄）
-  execute 'silent !cd' tags_dirpath '&& ctags -R -f' tag_name '2> /dev/null &'
-endfunction
-
-augroup ctags
-  autocmd!
-  autocmd BufWritePost * call s:execute_ctags()
-augroup END
-
-
-
 " 操作・入力系
-" インサートモードでbackspaceを有効に
-set backspace=indent,eol,start
 " 入力モード中に素早くjjと入力した場合はESCとみなす
 inoremap jj <Esc>
 " ビジュアルモードの選択範囲を * で検索
@@ -125,24 +91,27 @@ cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
 
 
-let g:python3_host_prog = expand('/usr/local/bin/python3')
-
-
-call plug#begin('~/.vim/plugged')
-
-Plug 'scrooloose/nerdtree'
-Plug 'jistr/vim-nerdtree-tabs'
-
-" vim-plugの説明を軽くしておきます
+" call plug#begin('~/.vim/plugged')
 " 
-" for はファイルタイプがphpならプラグインを読み込む 
-" do はプラグインインストール、アップデート時に実行する内容 
-Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
+" Plug 'scrooloose/nerdtree'
+" Plug 'jistr/vim-nerdtree-tabs'
+" 
+" " vim-plugの説明を軽くしておきます
+" 
+" " for はファイルタイプがphpならプラグインを読み込む
+" " do はプラグインインストール、アップデート時に実行する内容
+" Plug 'lvht/phpcd.vim', { 'for': 'php', 'do': 'composer install' }
 
 
-call plug#end()
-
+" call plug#end()
 
 
 set t_kb=^H
+
+set nocompatible
+set backspace=indent,eol,start
+set autoindent
+set nowrap
+set ruler
+syntax on
 
