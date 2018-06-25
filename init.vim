@@ -182,6 +182,9 @@ noremap <S-j>   }
 noremap <S-k>   {
 noremap <S-l>   $
 
+" rails用
+imap %%% <%  %><Left><Left><Left>
+imap %=% <%=  %><Left><Left><Left>
 
 
 " リーダーキーをスペースに設定
@@ -221,4 +224,14 @@ augroup ctags
   autocmd BufWritePost * call s:execute_ctags()
 augroup END
 
+
+" erubyでの<%%>を補完
+inoremap <expr> % Lt_Percent_Completion()
+function Lt_Percent_Completion()
+  if matchstr(getline('.'), '.', col('.') -1 ) == ">"
+		return "\%\%\<Left>"
+	else
+		return "\%"
+	end
+endf
 

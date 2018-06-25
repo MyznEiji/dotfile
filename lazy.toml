@@ -158,10 +158,10 @@ on_ft = ['css']
 
 [[plugins]]
 repo = 'mattn/emmet-vim'
-on_ft = ["html", "css", "php"]
+on_ft = ["html", "css", "php", "eruby"]
 hook_add = '''
   "keybinding with <ctrl+t+,>
   let g:user_emmet_leader_key='<C-t>'
 
- 
+
 '''
