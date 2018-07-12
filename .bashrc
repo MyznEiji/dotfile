@@ -138,6 +138,10 @@ alias ctags_cus='ctags -R -f tags'
 # rake routeをwebで確認する
 alias routes='open http://localhost:3000/rails/info/routes'
 
+# google翻訳
+alias t-ej="trans {en=ja}"
+alias t-je="trans {ja=en}"
+
 # よく使っているコマンドをランキング表示する方法
 command_ranking()
 {
