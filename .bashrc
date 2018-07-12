@@ -139,8 +139,11 @@ alias ctags_cus='ctags -R -f tags'
 alias routes='open http://localhost:3000/rails/info/routes'
 
 # google翻訳
-alias t-ej="trans {en=ja}"
-alias t-je="trans {ja=en}"
+alias tj='trans -b -d :ja'
+alias te='trans -d -b :en'
+alias ttj='trans -I -b :ja'
+alias tte='trans -I -b :en'
+
 
 # よく使っているコマンドをランキング表示する方法
 command_ranking()
