@@ -16,3 +16,9 @@ resize-pane -R -t 1 40
 
 # メインとなるウィンドウの高さを35行に設定
 resize-pane -D -t 0 21
+
+select-pane -t 2
+
+split-window -h
+
+resize-pane -R -t 2 40
