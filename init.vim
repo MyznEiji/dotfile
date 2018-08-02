@@ -177,10 +177,10 @@ let g:lightline = {
  endfunction
 
 
-noremap <S-h>   ^
+" noremap <S-h>   ^
 noremap <S-j>   }
 noremap <S-k>   {
-noremap <S-l>   $
+" noremap <S-l>   $
 
 " rails用
 imap %%% <%  %><Left><Left><Left>
